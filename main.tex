@@ -22,7 +22,6 @@
     % \input{content/01_vorspann/01.1b_titelblatt_abschlussarbeit}
 
     \include{content/01_vorspann/01.2_abstract}
-    \include{content/01_vorspann/01.3_vorwort}
 
     \tableofcontents % Inhaltsverzeichnis
         
@@ -40,19 +39,18 @@
 
     % List of acronyms
     \printglossary[type=\acronymtype]
-
-    % List of code
     \cleardoublepage
-    \phantomsection
-    \addcontentsline{toc}{chapter}{\lstlistlistingname}
-    \lstlistoflistings
     \newpage
     % Ende Vorspann
     
     % Start Textteil
     \pagenumbering{arabic} % Begin arabic pagenumbering
     \include{content/02_textteil/einleitung}
-    \include{content/02_textteil/kapitel1}
+    \include{content/02_textteil/forschungsproblem}
+    \include{content/02_textteil/literatur}
+    \include{content/02_textteil/forschungsfragen}
+    \include{content/02_textteil/forschungsdesign}
+    \include{content/02_textteil/meilensteine_zeitplan}
     % Ende Textteil
     
     % Start Nachspann
