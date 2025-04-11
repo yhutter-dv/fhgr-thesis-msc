@@ -1,0 +1,66 @@
+\pdfvariable minorversion=7
+\pdfvariable inclusioncopyfonts=1
+
+\documentclass{arialFHGR} % use either arialFHGR or timesFHGR
+\input{config/metadata}
+\input{config/preamble}
+\begin{document}
+
+    \renewcommand{\contentsname}{Inhaltsverzeichnis}
+    \renewcommand{\listfigurename}{Abbildungsverzeichnis}
+    \renewcommand{\listtablename}{Tabellenverzeichnis}
+    \renewcommand{\acronymname}{Abkürzungsverzeichnis}
+    \renewcommand{\lstlistlistingname}{\texorpdfstring{Programmcodeverzeichnis\bigskip}{Programmcodeverzeichnis}}
+    
+    % Start Vorspann
+    
+    \pagenumbering{Roman} % Begin roman pagenumbering
+
+    % Titelblatt für eine Studienarbeit
+     \input{content/01_vorspann/01.1a_titelblatt_studienarbeit}
+    % ODER für eine Abschlussarbeit
+    % \input{content/01_vorspann/01.1b_titelblatt_abschlussarbeit}
+
+    \include{content/01_vorspann/01.2_abstract}
+    \include{content/01_vorspann/01.3_vorwort}
+
+    \tableofcontents % Inhaltsverzeichnis
+        
+    % List of figures
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\listfigurename}
+    \listoffigures
+    
+    % List of tables
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\listtablename}
+    \listoftables
+
+    % List of acronyms
+    \printglossary[type=\acronymtype]
+
+    % List of code
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\lstlistlistingname}
+    \lstlistoflistings
+    \newpage
+    % Ende Vorspann
+    
+    % Start Textteil
+    \pagenumbering{arabic} % Begin arabic pagenumbering
+    \include{content/02_textteil/einleitung}
+    \include{content/02_textteil/kapitel1}
+    % Ende Textteil
+    
+    % Start Nachspann
+    \printbibliography[heading=bibintoc,title={Literaturverzeichnis}]
+    \include{content/03_nachspann/hilfsmittelverzeichnis}
+    \appendix
+    \include{content/03_nachspann/anhang}
+    \include{content/03_nachspann/eiderklaerung}
+    % Ende Nachspann
+    
+\end{document}
